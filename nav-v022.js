@@ -8,7 +8,7 @@ const wikiGroups=[
 ];
 let activeGroup='首页';
 function selectGroup(name){activeGroup=name;current='全部';favoritesOnly=false;history.replaceState(null,'',location.pathname+location.search);render();window.scrollTo(0,0)}
-function selectCategory(c){const g=wikiGroups.find(x=>x.cats.includes(c));activeGroup=g?g.name:'首页';current=c;favoritesOnly=false;history.replaceState(null,'',location.pathname+location.search);render()}
+function selectCategory(c){const g=wikiGroups.find(x=>x.cats.includes(c));activeGroup=g?g.name:(c==='全部'?activeGroup:'首页');current=c;favoritesOnly=false;history.replaceState(null,'',location.pathname+location.search);render()}
 function showFavorites(){activeGroup='收藏';favoritesOnly=true;render()}
 function compactCard(e){return '<button class="compact-card" onclick="openRecord('+e.id+')"><strong>'+esc(e.title)+'</strong><span>'+esc(e.category)+'</span></button>'}
 function groupPanel(g){const items=records.filter(e=>g.cats.includes(e.category));return '<button class="group-tile" onclick="selectGroup(\''+g.name+'\')"><span class="group-icon">'+g.icon+'</span><strong>'+g.name+'</strong><small>'+g.desc+'</small><span class="group-count">'+items.length+' 条资料</span></button>'}
