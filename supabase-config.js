@@ -1,3 +1,3 @@
 /* Public browser configuration. Add your project's publishable key after database setup. NEVER use a secret/service_role key. */
 window.AYER_SUPABASE_URL='https://xtjvlblzqnqfmxsklvic.supabase.co';
-window.AYER_SUPABASE_PUBLISHABLE_KEY='';
+window.AYER_SUPABASE_PUBLISHABLE_KEY='sb_publishable_K_xHwphFZY7FJJz8LdBfTg_fhJ4s97p';
