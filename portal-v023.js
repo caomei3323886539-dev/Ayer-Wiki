@@ -29,6 +29,16 @@ showFavorites=function(){activeGroup='收藏';favoritesOnly=true;render()};
 const oldOpenPortal=openRecord;
 openRecord=function(id){oldOpenPortal(id);document.body.classList.remove('portal-home');const article=$p('content').querySelector('.article');if(article){const back=article.querySelector('.action');if(back&&back.textContent.includes('返回'))back.onclick=()=>render()}};
 const oldSearch=$p('search');oldSearch.placeholder='搜索艾耶尔大陆 Wiki';oldSearch.setAttribute('aria-label','搜索百科条目');
-const bottom=document.querySelector('.bottom');bottom.innerHTML='<button onclick="portalHome()">⌂<span>首页</span></button><button onclick="portalOpen(\'全部档案\')">▦<span>百科</span></button><button onclick="portalOpen(\'地区地图\')">◇<span>地图</span></button><button onclick="showFavorites()">☆<span>收藏</span></button>';
-document.querySelector('footer').textContent='艾耶尔大陆 · 世界百科 v0.2.6 · 精简首页';
+const bottom=document.querySelector('.bottom');
+const bottomItems=[
+{id:'home',label:'首页',action:"portalHome()",icon:"<svg class=\"nav-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z\"/><path d=\"m9 21 0-7h6v7\"/></svg>"},
+{id:'wiki',label:'百科',action:"portalOpen('全部档案')",icon:"<svg class=\"nav-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1z\"/><path d=\"M12 6v14M6 9h3M15 9h3M6 13h3M15 13h3\"/></svg>"},
+{id:'map',label:'地图',action:"portalOpen('地区地图')",icon:"<svg class=\"nav-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z\"/><path d=\"M9 3v15M15 6v15\"/><path d=\"m12 9 2-2 2 2-2 4z\"/></svg>"},
+{id:'favorites',label:'收藏',action:"showFavorites()",icon:"<svg class=\"nav-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m12 2 3.1 6.3 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z\"/></svg>"}
+];
+bottom.innerHTML=bottomItems.map(item=>'<button type="button" data-nav="'+item.id+'" aria-label="'+item.label+'" onclick="'+item.action+'"><span class="nav-emblem">'+item.icon+'</span><span class="nav-label">'+item.label+'</span></button>').join('');
+function syncBottomNavigation(){const selected=favoritesOnly?'favorites':activeGroup==='地区地图'?'map':activeGroup==='首页'?'home':'wiki';bottom.querySelectorAll('button[data-nav]').forEach(button=>{const active=button.dataset.nav===selected;button.classList.toggle('is-active',active);if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')})}
+const renderWithBottom=render;render=function(){renderWithBottom();syncBottomNavigation()};
+syncBottomNavigation();
+document.querySelector('footer').textContent='艾耶尔大陆 · 世界百科 v0.2.8 · 底部导航精绘';
 render();
