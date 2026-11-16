@@ -162,3 +162,23 @@ body.portal-v023 .community-compose-head button{border:0;background:transparent;
 body.portal-v023 .community-compose label{display:block;font-size:13px;font-weight:600;margin:16px 0;color:#315b7b}
 body.portal-v023 .community-compose input,body.portal-v023 .community-compose select,body.portal-v023 .community-compose textarea{display:block;width:100%;margin-top:8px;padding:13px;border:1px solid #c4d9e9;border-radius:12px;background:white;color:#315b7b;font:inherit;font-weight:400;box-sizing:border-box}
 body.portal-v023 .community-submit{background:#318ec3;color:white;border:0;border-radius:12px;padding:13px;width:100%;min-height:48px}
+
+/* v0.3.3 cloud community */
+body.portal-v023 .cloud-account{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 0 17px;font-size:12px;color:#567e9a;overflow-wrap:anywhere}
+body.portal-v023 .cloud-account button,body.portal-v023 .cloud-refresh button,body.portal-v023 .cloud-comments button{border:1px solid #bcd8ea;border-radius:10px;padding:9px 12px;background:white;color:#2c7cad;min-height:44px}
+body.portal-v023 .cloud-refresh{text-align:center;margin:16px 0}
+body.portal-v023 .cloud-comments{margin-top:12px;padding-top:12px;border-top:1px solid #e2edf5}
+body.portal-v023 .cloud-comment{padding:10px 0;border-bottom:1px solid #eef4f8}
+body.portal-v023 .cloud-comment strong{font-size:12px;margin-right:10px}
+body.portal-v023 .cloud-comment small{font-size:10px;color:#8ba2b4}
+body.portal-v023 .cloud-comment p{font-size:13px;margin:7px 0}
+body.portal-v023 .cloud-comments label{display:block;font-size:12px;margin:15px 0 7px}
+body.portal-v023 .cloud-comments textarea{width:100%;border:1px solid #bfd7e8;border-radius:10px;padding:10px;font:inherit;box-sizing:border-box}
+body.portal-v023 .cloud-auth-overlay{position:fixed;inset:0;z-index:1300;background:#122f4a9c;display:flex;align-items:center;justify-content:center;padding:18px}
+body.portal-v023 .cloud-auth{position:relative;background:#f8fcff;border-radius:18px;padding:25px;width:min(100%,420px);max-height:90vh;overflow:auto}
+body.portal-v023 .cloud-auth h3{margin:0 0 8px;font-size:22px}
+body.portal-v023 .cloud-auth p{font-size:12px;line-height:1.6;color:#69869c}
+body.portal-v023 .cloud-auth label{display:block;font-size:13px;margin:14px 0}
+body.portal-v023 .cloud-auth input,body.portal-v023 .cloud-auth select{display:block;width:100%;margin-top:6px;padding:11px;border:1px solid #bfd7e8;border-radius:9px;box-sizing:border-box}
+body.portal-v023 .cloud-auth form>button{width:100%;border:0;background:#318ec3;color:white;border-radius:11px;margin-top:8px}
+body.portal-v023 .cloud-auth .cloud-close{position:absolute;right:12px;top:10px;border:0;background:none;font-size:25px;min-width:44px}
