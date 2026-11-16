@@ -297,3 +297,17 @@ body.portal-v023 .ayer-avatar-trigger{padding:0;cursor:pointer;display:block;ove
 .ayer-feature-slide .ayer-slide-copy button{position:absolute;right:16px;bottom:25px;pointer-events:auto;background:#123f69ba;backdrop-filter:blur(8px);border:1px solid #ffffffb0;box-shadow:0 3px 12px #102e4933}
 .ayer-feature-slide .ayer-slide-copy button:active{transform:scale(.96)}
 @media(max-width:480px){.ayer-feature-stage{height:clamp(140px,37vw,195px)}.ayer-feature-slide .ayer-slide-copy button{right:11px;bottom:24px;font-size:11px;padding:6px 11px}}
+
+/* v0.4.8: restore readable titles, safe clickable slides and restrained indicators */
+.ayer-feature-slide .ayer-slide-copy{z-index:4;pointer-events:none}
+.ayer-feature-slide .ayer-slide-copy>span{display:block;position:absolute;left:16px;top:13px;font-size:10px;font-weight:600;letter-spacing:.08em;color:#fff;background:#10365d9c;padding:4px 8px;border-radius:5px;max-width:calc(100% - 30px)}
+.ayer-feature-slide .ayer-slide-copy>strong{display:block;position:absolute;left:16px;bottom:48px;color:white;font-size:clamp(17px,3.8vw,25px);line-height:1.25;font-weight:800;text-shadow:0 2px 8px #001b3dbb;background:#092d4e8c;padding:5px 9px;border-radius:7px;max-width:calc(100% - 35px)}
+.ayer-feature-slide .ayer-slide-copy>small{display:block;position:absolute;left:17px;bottom:23px;font-size:11px;color:#fff;text-shadow:0 1px 4px #001c3d;background:#092d4e99;padding:3px 7px;border-radius:5px;max-width:calc(100% - 160px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ayer-feature-slide .ayer-slide-copy button{z-index:6;right:13px;bottom:18px;min-height:33px;cursor:pointer}
+.ayer-carousel-dots{bottom:7px;pointer-events:none;gap:5px}
+.ayer-carousel-dot{width:6px;height:6px;min-height:6px;opacity:.85;pointer-events:auto}
+.ayer-carousel-dot.is-active{width:17px}
+.ayer-carousel-arrow{z-index:8;width:26px;height:34px;top:39%;cursor:pointer}
+.ayer-feature-slide.is-active .ayer-slide-copy button{pointer-events:auto}
+.ayer-feature-slide:not(.is-active) .ayer-slide-copy button{pointer-events:none}
+@media(max-width:480px){.ayer-feature-slide .ayer-slide-copy>strong{font-size:17px;bottom:47px}.ayer-feature-slide .ayer-slide-copy>small{font-size:10px}.ayer-feature-slide .ayer-slide-copy button{right:10px;bottom:18px;font-size:11px;padding:5px 10px}}
