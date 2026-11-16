@@ -115,3 +115,9 @@ body.portal-v023 .mine-profile-edit label{display:block;font-size:12px;margin-bo
 body.portal-v023 .mine-profile-edit input,body.portal-v023 .mine-profile-edit textarea{width:100%;box-sizing:border-box;display:block;margin-top:4px;border:1px solid #b9d5e8;border-radius:8px;padding:9px;font:inherit;color:#315b7d;background:white}
 body.portal-v023 .mine-edit-actions{display:flex;gap:8px}
 @media(min-width:760px){body.portal-v023 .mine-page{max-width:620px;margin-left:auto;margin-right:auto}}
+
+/* v0.3.1: global masthead only on the homepage */
+body>header[hidden]{display:none!important}
+body.wiki-inner-page .main{padding-top:12px}
+body.wiki-inner-page .mine-page{margin-top:-12px}
+body.wiki-inner-page .world-page{padding-top:0}
