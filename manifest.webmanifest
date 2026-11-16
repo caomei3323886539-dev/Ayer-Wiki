@@ -1,0 +1,17 @@
+{
+  "name": "艾耶尔大陆 Wiki · 星界档案",
+  "short_name": "艾耶尔 Wiki",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f0f7ff",
+  "theme_color": "#c2e2fb",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
