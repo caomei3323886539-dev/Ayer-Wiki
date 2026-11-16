@@ -288,9 +288,9 @@ body.portal-v023 .ayer-avatar-trigger{padding:0;cursor:pointer;display:block;ove
 /* Illustrated homepage banners v0.4.6: full-art backgrounds with a single interactive CTA */
 .ayer-feature-carousel{background:#c9def0}
 .ayer-feature-slide{background-position:center;background-size:cover;background-repeat:no-repeat}
-.ayer-feature-slide.ayer-slide-sky{background-image:linear-gradient(115deg,#143b68aa,#143b6800 60%),url("./icons/banners/sky-valley.webp?v=046")}
-.ayer-feature-slide.ayer-slide-world{background-image:linear-gradient(115deg,#143b68aa,#143b6800 60%),url("./icons/banners/world-setting.webp?v=046")}
-.ayer-feature-slide.ayer-slide-calamity{background-image:linear-gradient(115deg,#27214baa,#27214b00 60%),url("./icons/banners/calamity.webp?v=046")}
+.ayer-feature-slide.ayer-slide-sky{background-image:linear-gradient(115deg,#143b68aa,#143b6800 60%),url("./icons/banners/sky-valley.webp?v=047")}
+.ayer-feature-slide.ayer-slide-world{background-image:linear-gradient(115deg,#143b68aa,#143b6800 60%),url("./icons/banners/world-setting.webp?v=047")}
+.ayer-feature-slide.ayer-slide-calamity{background-image:linear-gradient(115deg,#27214baa,#27214b00 60%),url("./icons/banners/calamity.webp?v=047")}
 .ayer-feature-slide .ayer-slide-art{display:none}
 .ayer-feature-slide .ayer-slide-copy{position:absolute;inset:0;max-width:none;width:100%;padding:0;display:block;pointer-events:none}
 .ayer-feature-slide .ayer-slide-copy>span,.ayer-feature-slide .ayer-slide-copy>strong,.ayer-feature-slide .ayer-slide-copy>small{display:none}
