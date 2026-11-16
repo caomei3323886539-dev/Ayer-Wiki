@@ -350,3 +350,11 @@ body.portal-v023>header:not([hidden]) .search{display:block;width:100%;margin:10
 .ayer-feature-slide.ayer-slide-world{background-image:linear-gradient(90deg,rgba(20,53,93,.37) 0%,rgba(20,53,93,.06) 66%,transparent 100%),url("./icons/banners/world-setting.webp?v=052")!important}
 .ayer-feature-slide.ayer-slide-calamity{background-image:linear-gradient(90deg,rgba(36,26,72,.4) 0%,rgba(36,26,72,.06) 66%,transparent 100%),url("./icons/banners/calamity.webp?v=052")!important}
 @media(max-width:480px){.ayer-feature-slide .ayer-slide-copy>strong{top:36px;font-size:clamp(23px,6.1vw,32px)!important}.ayer-feature-slide .ayer-slide-copy>small{top:81px;font-size:11px!important;max-width:calc(100% - 32px)}.ayer-feature-slide .ayer-slide-copy>span{top:13px;font-size:9px!important}.ayer-feature-slide .ayer-slide-copy button{bottom:12px}}
+
+/* v0.5.3 — close the unwanted vertical seam between feature carousel and seven home tiles */
+body.portal-v023 .ayer-feature-carousel{margin-bottom:0!important;display:block;line-height:0}
+body.portal-v023 .ayer-feature-stage{display:block;margin:0;padding:0;vertical-align:top}
+body.portal-v023 .ayer-feature-carousel+.portal-shortcuts{padding-top:5px!important;margin-top:0!important}
+body.portal-v023 .ayer-feature-carousel~.portal-shortcuts{padding-top:5px!important;margin-top:0!important}
+body.portal-v023 .ayer-feature-carousel .ayer-slide-copy{line-height:normal}
+body.portal-v023 .ayer-feature-carousel .ayer-carousel-dots{line-height:normal}
