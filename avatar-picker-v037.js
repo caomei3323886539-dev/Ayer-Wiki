@@ -5,7 +5,7 @@ const avatarImages=["/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABUOEBIQDRUSERIYFhUZHzQiHx0
 const avatarNames=['红樱羽翼少女','苍蓝星翼少女','紫晶镰翼少女'];
 const storageKey='ayerWikiAvatarChoice';
 const avatarSrc=i=>'data:image/jpeg;base64,'+avatarImages[i];
-function current(){try{const v=Number(localStorage.getItem(storageKey));return Number.isInteger(v)&&v>=0&&v<3?v:-1}catch{return -1}}
+function current(){try{const raw=localStorage.getItem(storageKey);if(raw===null)return -1;const v=Number(raw);return Number.isInteger(v)&&v>=0&&v<3?v:-1}catch{return -1}}
 window.ayerAvatarChoose=function(i){if(!Number.isInteger(i)||i<0||i>2)return;try{localStorage.setItem(storageKey,String(i))}catch(e){alert('当前浏览器无法保存头像，请检查隐私设置');return}window.ayerAvatarClose();render()};
 window.ayerAvatarClose=function(){document.getElementById('ayer-avatar-dialog')?.remove()};
 window.ayerAvatarOpen=function(){
