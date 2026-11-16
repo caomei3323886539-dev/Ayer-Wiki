@@ -1,0 +1,26 @@
+/* v0.3.0 - local personal hub, no simulated cloud account */
+const mineStoreKey='ayerWikiLocalProfile';
+let mineTab='收藏';
+function mineRead(){try{return JSON.parse(localStorage.getItem(mineStoreKey)||'{}')}catch{return {}}}
+function mineSaveProfile(){const name=document.getElementById('mine-name-input');const note=document.getElementById('mine-note-input');if(!name||!note)return;localStorage.setItem(mineStoreKey,JSON.stringify({name:name.value.trim().slice(0,24)||'星界旅人',note:note.value.trim().slice(0,90)}));render()}
+function mineEdit(){const p=mineRead();const target=document.querySelector('.mine-profile-edit');if(!target)return;target.hidden=false;target.innerHTML='<label>显示名称<input id="mine-name-input" maxlength="24" value="'+escapePortal(p.name||'星界旅人')+'"></label><label>个人签名<textarea id="mine-note-input" maxlength="90" rows="2">'+escapePortal(p.note||'记录艾耶尔大陆的每一段旅程。')+'</textarea></label><div class="mine-edit-actions"><button onclick="mineSaveProfile()">保存到本机</button><button onclick="render()">取消</button></div>'}
+function mineOpen(){activeGroup='我的';favoritesOnly=false;query='';$p('search').value='';render();window.scrollTo(0,0)}
+function mineSwitch(t){mineTab=t;render()}
+function minePage(){
+const p=mineRead();const name=escapePortal(p.name||'星界旅人');const note=escapePortal(p.note||'记录艾耶尔大陆的每一段旅程。');
+const saved=records.filter(e=>isWikiWorldEntry(e)&&favorites.has(e.id));
+const tabs=['收藏','最近阅读','我的档案'];
+let list='';
+if(mineTab==='收藏')list=saved.length?saved.map(e=>'<button class="mine-saved" onclick="openRecord('+e.id+')"><span>✧</span><strong>'+escapePortal(e.title)+'</strong><small>'+escapePortal(e.category)+'</small><span>›</span></button>').join(''):'<div class="mine-empty"><div>✧</div><strong>还没有收藏的档案</strong><p>浏览世界设定、地区和人物资料，点击条目中的收藏按钮即可保存。</p><button onclick="portalOpen(\'全部档案\')">探索百科 ›</button></div>';
+if(mineTab==='最近阅读')list='<div class="mine-empty"><div>◷</div><strong>阅读记录暂未启用</strong><p>此功能将在后续版本中加入。当前不会追踪你的浏览历史。</p></div>';
+if(mineTab==='我的档案')list='<div class="mine-empty"><div>✎</div><strong>个人档案</strong><p>可编辑本机显示名称与签名。账号登录、云端同步及公开发布尚未开放。</p><button onclick="mineEdit()">编辑个人资料 ›</button></div>';
+return '<section class="mine-page"><div class="mine-hero"><div class="mine-hero-top"><span>AIYER · TRAVELER PROFILE</span><span class="mine-star">✧</span></div><div class="mine-profile"><div class="mine-avatar" aria-hidden="true"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="#e3f2ff"/><path d="M19 61q3-17 21-17t21 17" fill="#8bb9dc"/><circle cx="40" cy="31" r="15" fill="#f8e7da"/><path d="M25 34q-3-22 15-22 20 0 15 23l-5-12-19-2z" fill="#8aabd0"/><path d="M40 5l4 8-4 8-4-8z" fill="#f7dca5"/></svg></div><div class="mine-identity"><div class="mine-name-line"><h2>'+name+'</h2><button onclick="mineEdit()" aria-label="编辑个人资料">✎</button></div><span>艾耶尔大陆 · 本地旅人档案</span></div></div><p class="mine-signature">'+note+'</p><div class="mine-tags"><span>✦ 世界探索者</span><span>◇ 百科收藏者</span></div><div class="mine-stats"><div><strong>'+saved.length+'</strong><span>已收藏</span></div><div><strong>'+worldCategories.reduce((n,c)=>n+worldCount(c.key),0)+'</strong><span>世界资料</span></div><div><strong>本地</strong><span>保存方式</span></div></div><div class="mine-profile-edit" hidden></div></div><div class="mine-surface"><div class="mine-tools"><button onclick="portalOpen(\'全部档案\')"><span>▤</span><strong>百科目录</strong><small>浏览所有条目</small></button><button onclick="portalOpen(\'世界设定\')"><span>✧</span><strong>世界设定</strong><small>探索世界起源</small></button><button onclick="portalOpen(\'地区地图\')"><span>◇</span><strong>地区地图</strong><small>探索大陆地区</small></button></div><div class="mine-tabbar">'+tabs.map(t=>'<button class="'+(mineTab===t?'active':'')+'" onclick="mineSwitch(\''+t+'\')">'+t+'</button>').join('')+'</div><div class="mine-tab-content">'+list+'</div><p class="mine-privacy">个人资料仅保存在此设备浏览器中，不会上传到 GitHub 或公开展示。</p></div></section>'
+}
+const mineNavSvg='<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21q.5-7 7.5-7t7.5 7"/><path d="m18 4 1.5-2L21 4"/></svg>';
+bottom.insertAdjacentHTML('beforeend','<button type="button" data-nav="mine" aria-label="我的" onclick="mineOpen()"><span class="nav-emblem">'+mineNavSvg+'</span><span class="nav-label">我的</span></button>');
+const previousMineSync=syncBottomNavigation;
+syncBottomNavigation=function(){previousMineSync();const on=activeGroup==='我的';bottom.querySelectorAll('button[data-nav]').forEach(b=>{if(on){b.classList.toggle('is-active',b.dataset.nav==='mine');if(b.dataset.nav==='mine')b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')}else if(b.dataset.nav==='mine'){b.classList.remove('is-active');b.removeAttribute('aria-current')}})};
+const previousMineRender=render;
+render=function(){if(activeGroup==='我的'&&!query.trim()){$p('categories').style.display='none';$p('content').innerHTML=minePage();document.body.classList.add('portal-v023');document.body.classList.remove('portal-home');syncBottomNavigation()}else previousMineRender()};
+document.querySelector('footer').textContent='艾耶尔大陆 · 世界百科 v0.3.0 · 我的';
+render();
