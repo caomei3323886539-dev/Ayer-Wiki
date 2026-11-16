@@ -416,3 +416,49 @@ body.portal-v023 .community-compose{background:linear-gradient(165deg,#eaf5ff,#f
 body.portal-v023 .community-compose-head{border-bottom:1px solid #d7e6f3;padding-bottom:12px}
 body.portal-v023 .community-submit{background:linear-gradient(120deg,#246ba9,#48a0d2);border-radius:999px;box-shadow:0 4px 13px #367fb342}
 @media(max-width:420px){body.portal-v023 .community-cover{min-height:210px;padding:24px 18px 18px}body.portal-v023 .community-cover:before{right:-9px}body.portal-v023 .community-cover:after{right:22px}body.portal-v023 .community-post{padding:15px}body.portal-v023 .community-toolbar h3{font-size:21px}}
+
+/* v0.5.6 illustrated encyclopedia */
+body.portal-v023 .wiki-archive-page{padding:0 0 35px;color:#31516d}
+body.portal-v023 .wiki-archive-cover{position:relative;overflow:hidden;min-height:240px;padding:27px 22px 19px;border-radius:22px;background:radial-gradient(circle at 80% 35%,#fff6d4a8 0,transparent 30%),linear-gradient(100deg,#173d75d9 0%,#2b69a0b5 48%,#84bfe17a 100%),url('./icons/home/ayer_wiki_header.webp') center/cover;box-shadow:0 9px 25px #31648c29;color:white;border:1px solid #b6d6ec}
+body.portal-v023 .wiki-cover-eyebrow{position:relative;z-index:1;font-size:10px;letter-spacing:.16em;color:#e0efff;font-weight:700}
+body.portal-v023 .wiki-cover-ornament{position:absolute;right:28px;top:40px;width:115px;height:115px;display:grid;place-items:center;border:2px solid #ffecb5a8;border-radius:50%;box-shadow:0 0 0 12px #ffffff18,0 0 0 24px #ffffff0d;color:#fff0c4;font-size:85px;text-shadow:0 0 18px #fff8}
+body.portal-v023 .wiki-archive-cover h2{position:relative;z-index:1;font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",serif;font-size:37px;letter-spacing:.13em;margin:34px 0 11px;color:#fff;text-shadow:0 3px 12px #17395c9c}
+body.portal-v023 .wiki-archive-cover p{position:relative;z-index:1;max-width:265px;font-size:12px;line-height:1.85;color:#f1f8ff;text-shadow:0 1px 5px #163c64}
+body.portal-v023 .wiki-cover-bottom{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #ffffff70;margin-top:26px;padding-top:12px;font-size:10px;letter-spacing:.07em;color:#edf7ff}
+body.portal-v023 .wiki-cover-bottom strong{font-size:19px;color:#fff4cc}
+body.portal-v023 .wiki-cover-bottom small{font-size:10px;color:#f6fbff}
+body.portal-v023 .wiki-archive-heading{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:26px 2px 14px}
+body.portal-v023 .wiki-archive-heading small{font-size:10px;letter-spacing:.14em;color:#83a5bd;font-weight:700}
+body.portal-v023 .wiki-archive-heading h3{font-family:"Noto Serif SC","Songti SC",serif;font-size:22px;color:#285579;margin:5px 0 0}
+body.portal-v023 .wiki-archive-heading>span{font-size:11px;color:#7d9cb4}
+body.portal-v023 .wiki-archive-chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+body.portal-v023 .wiki-archive-chapter{position:relative;display:flex;flex-direction:column;align-items:flex-start;text-align:left;min-width:0;min-height:170px;padding:14px;border:1px solid #d1e2f0;border-radius:17px;background:linear-gradient(150deg,#fff,#eef7ff);box-shadow:0 4px 14px #356d9a16;color:#355e7d;transition:transform .18s,border-color .18s,box-shadow .18s}
+body.portal-v023 .wiki-archive-chapter:active{transform:scale(.98)}
+body.portal-v023 .wiki-archive-chapter.selected{border-color:#72b4df;box-shadow:0 0 0 2px #d5ecff,0 5px 15px #4a95bd2c}
+body.portal-v023 .wiki-archive-chapter img{width:62px;height:62px;object-fit:contain;border-radius:14px;filter:drop-shadow(0 2px 4px #31648a25)}
+body.portal-v023 .wiki-archive-chapter>span{display:flex;flex-direction:column;gap:3px;max-width:100%}
+body.portal-v023 .wiki-archive-chapter small{font-size:9px;letter-spacing:.08em;color:#87a6bd}
+body.portal-v023 .wiki-archive-chapter strong{font-family:"Noto Serif SC","Songti SC",serif;font-size:17px;color:#285479}
+body.portal-v023 .wiki-archive-chapter em{font-size:10px;font-style:normal;color:#7b98ad;white-space:normal;line-height:1.5}
+body.portal-v023 .wiki-archive-chapter>b{position:absolute;top:17px;right:13px;font-size:10px;color:#4b90b9;background:#e7f5ff;border-radius:999px;padding:5px 7px}
+body.portal-v023 .wiki-entry-heading{scroll-margin-top:15px}
+body.portal-v023 .wiki-entry-heading>button{background:#eff7ff;border:1px solid #c9e1f2;border-radius:999px;padding:9px 12px;color:#447ea7;font-size:11px}
+body.portal-v023 .wiki-archive-filter{display:flex;gap:7px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none}
+body.portal-v023 .wiki-archive-filter button{flex:none;border-radius:999px;border:1px solid #cfe2f0;background:white;color:#6488a5;padding:9px 13px;font-size:12px;min-height:39px}
+body.portal-v023 .wiki-archive-filter button.active{color:white;background:linear-gradient(120deg,#2d6fa9,#52a4d1);border-color:#4e9aca;font-weight:700}
+body.portal-v023 .wiki-archive-filter button span{opacity:.8}
+body.portal-v023 .wiki-archive-results{display:flex;justify-content:space-between;align-items:center;margin:6px 2px 13px;font-size:11px;color:#819fb6}
+body.portal-v023 .wiki-archive-results button{background:none;border:0;color:#4287b7;font-size:11px}
+body.portal-v023 .wiki-archive-entries{display:grid;gap:10px}
+body.portal-v023 .wiki-archive-entry{display:flex;align-items:center;gap:13px;width:100%;min-height:96px;text-align:left;padding:14px;border:1px solid #d6e5f0;border-radius:15px;background:linear-gradient(145deg,#fff,#f7fbff);box-shadow:0 3px 11px #376f9a13;color:#2e5372}
+body.portal-v023 .wiki-entry-glyph{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#e4f4ff,#d1e7fa);color:#5597c2;font-size:25px;border:1px solid #c9e2f3}
+body.portal-v023 .wiki-entry-text{display:flex;flex-direction:column;gap:5px;min-width:0;flex:1}
+body.portal-v023 .wiki-entry-text small{font-size:9px;letter-spacing:.08em;color:#7fa4be}
+body.portal-v023 .wiki-entry-text strong{font-size:15px;color:#285576}
+body.portal-v023 .wiki-entry-text>span{font-size:11px;color:#8097a9;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+body.portal-v023 .wiki-entry-arrow{color:#9fc0d7;font-size:24px}
+body.portal-v023 .wiki-archive-empty{text-align:center;padding:34px;color:#678cac;background:#f4faff;border-radius:15px}
+body.portal-v023 .wiki-archive-empty small{font-size:11px}
+body.portal-v023 .wiki-archive-note{font-size:11px;line-height:1.8;color:#829fb4;text-align:center;padding:15px}
+@media(min-width:720px){body.portal-v023 .wiki-archive-chapters{grid-template-columns:repeat(3,minmax(0,1fr))}body.portal-v023 .wiki-archive-cover{min-height:270px;padding:35px}}
+@media(max-width:365px){body.portal-v023 .wiki-archive-chapter{padding:11px;min-height:165px}body.portal-v023 .wiki-archive-chapter strong{font-size:15px}body.portal-v023 .wiki-archive-chapter img{width:55px;height:55px}}
