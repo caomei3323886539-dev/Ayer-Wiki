@@ -334,3 +334,19 @@ body.portal-v023>header:not([hidden]) .search{display:block;width:100%;margin:10
 .ayer-feature-slide .ayer-slide-copy button:hover{background:rgba(18,55,91,.8)}
 .ayer-carousel-arrow{background:rgba(18,49,80,.32);border-radius:9px}
 .ayer-carousel-dots{bottom:5px}
+
+/* v0.5.2 — render real art-directed typography over text-free banner assets */
+.ayer-feature-slide .ayer-slide-copy>span,
+.ayer-feature-slide .ayer-slide-copy>strong,
+.ayer-feature-slide .ayer-slide-copy>small{display:block!important;box-shadow:none!important;background:transparent!important;max-width:none}
+.ayer-feature-slide .ayer-slide-copy{z-index:4;pointer-events:none}
+.ayer-feature-slide .ayer-slide-copy>span{position:absolute;top:14px;left:17px;right:55px;padding:0!important;border:0!important;font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:10px!important;font-weight:600;letter-spacing:.09em;color:#f7faff;text-shadow:0 1px 5px #1b4169a8}
+.ayer-feature-slide .ayer-slide-copy>strong{position:absolute;top:38px;bottom:auto!important;left:17px;right:12px;width:max-content;max-width:calc(100% - 38px);padding:0!important;font-family:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;font-size:clamp(25px,6.4vw,42px)!important;line-height:1.22!important;font-weight:800!important;letter-spacing:.065em;color:#fff!important;-webkit-text-stroke:.3px rgba(255,255,255,.7);text-shadow:0 2px 3px #193e69a8,0 4px 15px #153f67b0}
+.ayer-feature-slide .ayer-slide-copy>small{position:absolute;top:calc(38px + clamp(25px,6.4vw,42px)*1.38);bottom:auto!important;left:18px;right:14px;max-width:calc(100% - 36px);width:max-content;padding:0!important;font-family:"Noto Serif SC","Songti SC","STSong","SimSun",serif;font-size:clamp(10px,2.3vw,14px)!important;line-height:1.5;letter-spacing:.025em;color:#f6f9ff!important;text-shadow:0 1px 4px #153b64d9,0 2px 9px #153b64c9;white-space:normal}
+.ayer-feature-slide .ayer-slide-copy button{pointer-events:auto;right:13px;bottom:16px}
+.ayer-feature-slide.is-active .ayer-slide-copy button{pointer-events:auto}
+.ayer-feature-slide:not(.is-active) .ayer-slide-copy button{pointer-events:none}
+.ayer-feature-slide.ayer-slide-sky{background-image:linear-gradient(90deg,rgba(20,53,93,.37) 0%,rgba(20,53,93,.06) 66%,transparent 100%),url("./icons/banners/sky-valley.webp?v=052")!important}
+.ayer-feature-slide.ayer-slide-world{background-image:linear-gradient(90deg,rgba(20,53,93,.37) 0%,rgba(20,53,93,.06) 66%,transparent 100%),url("./icons/banners/world-setting.webp?v=052")!important}
+.ayer-feature-slide.ayer-slide-calamity{background-image:linear-gradient(90deg,rgba(36,26,72,.4) 0%,rgba(36,26,72,.06) 66%,transparent 100%),url("./icons/banners/calamity.webp?v=052")!important}
+@media(max-width:480px){.ayer-feature-slide .ayer-slide-copy>strong{top:36px;font-size:clamp(23px,6.1vw,32px)!important}.ayer-feature-slide .ayer-slide-copy>small{top:81px;font-size:11px!important;max-width:calc(100% - 32px)}.ayer-feature-slide .ayer-slide-copy>span{top:13px;font-size:9px!important}.ayer-feature-slide .ayer-slide-copy button{bottom:12px}}
