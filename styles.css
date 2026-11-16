@@ -311,3 +311,12 @@ body.portal-v023 .ayer-avatar-trigger{padding:0;cursor:pointer;display:block;ove
 .ayer-feature-slide.is-active .ayer-slide-copy button{pointer-events:auto}
 .ayer-feature-slide:not(.is-active) .ayer-slide-copy button{pointer-events:none}
 @media(max-width:480px){.ayer-feature-slide .ayer-slide-copy>strong{font-size:17px;bottom:47px}.ayer-feature-slide .ayer-slide-copy>small{font-size:10px}.ayer-feature-slide .ayer-slide-copy button{right:10px;bottom:18px;font-size:11px;padding:5px 10px}}
+
+/* v0.4.9 — illustrated homepage masthead. Image: icons/home/wiki-header.webp */
+body.portal-v023>header:not([hidden]){padding:0 0 16px;background:linear-gradient(145deg,#194d86,#3c78b5);border:0;color:white}
+body.portal-v023>header:not([hidden])::before{content:"";display:block;width:100%;height:auto;aspect-ratio:3 / 1;background-image:url("./icons/home/wiki-header.webp?v=049");background-position:center;background-size:100% auto;background-repeat:no-repeat;background-color:#3976b2}
+body.portal-v023>header:not([hidden])>.wrap{max-width:1040px;padding:0 14px}
+body.portal-v023>header:not([hidden]) .eyebrow,body.portal-v023>header:not([hidden]) h1,body.portal-v023>header:not([hidden]) .subtitle{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;margin:0!important;padding:0!important}
+body.portal-v023>header:not([hidden]) .search{display:block;width:100%;margin:10px 0 0;background:#fff;color:#244e70;border-radius:14px;min-height:48px;box-shadow:0 3px 12px #082c5426}
+@media(min-width:800px){body.portal-v023>header:not([hidden])::before{max-height:380px;background-size:cover}}
+@media(prefers-reduced-motion:no-preference){body.portal-v023>header:not([hidden]) .search{transition:box-shadow .2s ease}body.portal-v023>header:not([hidden]) .search:focus{box-shadow:0 0 0 3px #a6d9ff}}
