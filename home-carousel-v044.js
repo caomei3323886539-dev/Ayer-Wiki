@@ -1,4 +1,4 @@
-/* Ayer Wiki v0.4.5 - rotating homepage features */
+/* Ayer Wiki v0.4.8 - rotating homepage features */
 (function(){
 const slides=[
 {eyebrow:'SKY VALLEY · 神之谷',title:'神之谷 · 浮空岛群',detail:'高空一万米 · 二十座浮空岛',type:'sky',action:()=>{const r=records.find(x=>x.title==='神之谷');if(r)openRecord(r.id);else portalOpen('地区地图')}},
@@ -31,12 +31,20 @@ root.querySelectorAll('.ayer-carousel-dot').forEach((el,n)=>el.classList.toggle(
 lastInteraction=Date.now();
 };
 window.ayerCarouselStep=function(delta){ayerCarouselGo(index+delta)};
-window.ayerCarouselOpen=function(i){slides[i].action()};
+window.ayerCarouselOpen=function(i){
+const n=Number(i);
+const slide=slides[n];
+if(!slide)return;
+if(slide.type==='sky'){portalOpen('地区地图');return}
+if(slide.type==='world'){portalOpen('世界设定');return}
+if(slide.type==='calamity'){portalOpen('灾潮图鉴');return}
+slide.action();
+};
 window.ayerNoticeOpen=function(i){notices[i].action()};
 const oldLanding=portalLanding;
 portalLanding=function(){
 let html=oldLanding();
-const slidesHtml=slides.map((s,i)=>'<div class="ayer-feature-slide ayer-slide-'+s.type+(i===index?' is-active':'')+'" aria-hidden="'+(i!==index)+'"><div class="ayer-slide-art" aria-hidden="true"><span class="ayer-art-ring"></span><span class="ayer-art-symbol">'+(s.type==='sky'?'✧':s.type==='world'?'✦':'◇')+'</span></div><div class="ayer-slide-copy"><span>'+s.eyebrow+'</span><strong>'+s.title+'</strong><small>'+s.detail+'</small><button type="button" onclick="ayerCarouselOpen('+i+')">探索专题　›</button></div></div>').join('');
+const slidesHtml=slides.map((s,i)=>'<div class="ayer-feature-slide ayer-slide-'+s.type+(i===index?' is-active':'')+'" aria-hidden="'+(i!==index)+'"><div class="ayer-slide-art" aria-hidden="true"><span class="ayer-art-ring"></span><span class="ayer-art-symbol">'+(s.type==='sky'?'✧':s.type==='world'?'✦':'◇')+'</span></div><div class="ayer-slide-copy"><span>'+s.eyebrow+'</span><strong>'+s.title+'</strong><small>'+s.detail+'</small><button type="button" onclick="ayerCarouselOpen('+i+')">查看专题 ›</button></div></div>').join('');
 const banner='<section id="ayer-feature-carousel" class="ayer-feature-carousel" aria-label="首页专题轮播"><div class="ayer-feature-stage">'+slidesHtml+'</div><button class="ayer-carousel-arrow prev" type="button" aria-label="上一张" onclick="ayerCarouselStep(-1)">‹</button><button class="ayer-carousel-arrow next" type="button" aria-label="下一张" onclick="ayerCarouselStep(1)">›</button><div class="ayer-carousel-dots">'+slides.map((_,i)=>'<button class="ayer-carousel-dot'+(i===index?' is-active':'')+'" type="button" aria-label="显示第'+(i+1)+'张专题" onclick="ayerCarouselGo('+i+')"></button>').join('')+'</div></section>';
 html=html.replace(/<div class="portal-banner">[\s\S]*?<\/div>/,banner);
 html=html.replace(/<section class="portal-announcement">[\s\S]*?<\/section>/,'<section class="portal-announcement ayer-rotating-notice"><span>资讯</span><p id="ayer-notice-text">'+notices[noticeIndex].text+'</p><button type="button" onclick="ayerNoticeOpen(window.ayerNoticeIndex||0)">查看 ›</button></section>');
