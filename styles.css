@@ -65,3 +65,53 @@ body.portal-v023 .world-entry-copy small{font-size:11px;line-height:1.5;color:#8
 body.portal-v023 .world-entry-chevron{font-size:22px;color:#9cb4c6}
 body.portal-v023 .world-source-note{font-size:11px;color:#849caf;line-height:1.8;margin:18px 5px}
 @media(min-width:760px){body.portal-v023 .world-chapters{grid-template-columns:repeat(4,minmax(0,1fr))}body.portal-v023 .world-cover{min-height:260px;padding:38px}body.portal-v023 .world-cover h2{font-size:38px}}
+
+/* v0.3.0 personal hub */
+body.portal-v023 .bottom{grid-template-columns:repeat(5,minmax(0,1fr));padding-left:6px;padding-right:6px}
+body.portal-v023 .bottom button{min-height:60px}
+body.portal-v023 .mine-page{margin:-4px -10px 0}
+body.portal-v023 .mine-hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 93% 13%,#50a7e55c,transparent 40%),linear-gradient(165deg,#116eb7,#095392 60%,#073e79);color:#fff;border-radius:0 0 26px 26px;padding:28px 23px 25px;min-height:365px}
+body.portal-v023 .mine-hero:before{content:'';position:absolute;right:-66px;top:-90px;width:290px;height:290px;border:1px solid #ffffff28;border-radius:50%;box-shadow:0 0 0 38px #ffffff08,0 0 0 75px #ffffff08;pointer-events:none}
+body.portal-v023 .mine-hero-top{display:flex;justify-content:space-between;align-items:center;color:#bfe2ff;letter-spacing:2px;font-size:10px}
+body.portal-v023 .mine-star{font-size:34px;color:#d5edff}
+body.portal-v023 .mine-profile{display:flex;align-items:center;gap:17px;margin-top:32px;position:relative}
+body.portal-v023 .mine-avatar{width:84px;height:84px;border-radius:50%;background:#e3f2ff;border:3px solid #ffffffb0;box-shadow:0 4px 18px #003d6b55;flex-shrink:0;overflow:hidden}
+body.portal-v023 .mine-avatar svg{width:100%;height:100%}
+body.portal-v023 .mine-identity{min-width:0}
+body.portal-v023 .mine-name-line{display:flex;align-items:center;gap:9px}
+body.portal-v023 .mine-name-line h2{font-size:23px;color:white;margin:0;overflow-wrap:anywhere}
+body.portal-v023 .mine-name-line button{border:0;background:#ffffff20;color:#fff;border-radius:8px;width:34px;height:34px;font-size:19px}
+body.portal-v023 .mine-identity>span{font-size:12px;color:#b9d9f4;line-height:1.7}
+body.portal-v023 .mine-signature{font-size:13px;color:#e5f3ff;line-height:1.7;margin:24px 0 16px;position:relative}
+body.portal-v023 .mine-tags{display:flex;gap:8px;flex-wrap:wrap}
+body.portal-v023 .mine-tags span{font-size:11px;background:#ffffff23;border:1px solid #ffffff24;border-radius:6px;padding:6px 9px}
+body.portal-v023 .mine-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:29px;position:relative}
+body.portal-v023 .mine-stats>div{display:flex;align-items:baseline;gap:6px}
+body.portal-v023 .mine-stats strong{font-size:21px;color:white}
+body.portal-v023 .mine-stats span{font-size:11px;color:#bbdcf5}
+body.portal-v023 .mine-surface{background:#fff;border-radius:25px 25px 0 0;margin-top:-3px;position:relative;padding:22px 17px 36px;min-height:400px}
+body.portal-v023 .mine-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+body.portal-v023 .mine-tools button{border:0;border-radius:13px;background:#f2f6fb;min-height:99px;padding:12px 5px;display:flex;flex-direction:column;align-items:center;gap:5px;color:#395e7b}
+body.portal-v023 .mine-tools button>span{font-size:26px;color:#508ab9}
+body.portal-v023 .mine-tools strong{font-size:12px}
+body.portal-v023 .mine-tools small{font-size:10px;color:#8599ac}
+body.portal-v023 .mine-tabbar{display:flex;gap:23px;border-bottom:1px solid #e6ebf1;margin-top:25px;overflow:auto}
+body.portal-v023 .mine-tabbar button{position:relative;border:0;background:transparent;color:#8593a4;padding:12px 0 13px;white-space:nowrap;font-size:15px}
+body.portal-v023 .mine-tabbar button.active{color:#315b7d;font-weight:700}
+body.portal-v023 .mine-tabbar button.active:after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;border-radius:5px;background:#329be0}
+body.portal-v023 .mine-tab-content{min-height:245px;padding-top:15px}
+body.portal-v023 .mine-empty{text-align:center;padding:44px 15px;color:#6f8497}
+body.portal-v023 .mine-empty>div{font-size:61px;color:#83b6dd;margin-bottom:12px}
+body.portal-v023 .mine-empty strong{font-size:15px;color:#3d6684}
+body.portal-v023 .mine-empty p{font-size:12px;line-height:1.8}
+body.portal-v023 .mine-empty button,.mine-edit-actions button{border:1px solid #b8d6eb;background:#e9f5ff;color:#286f9f;padding:9px 14px;border-radius:10px;min-height:44px}
+body.portal-v023 .mine-saved{width:100%;display:flex;align-items:center;gap:12px;background:white;border:1px solid #e2eaf2;border-radius:12px;padding:13px;margin-bottom:8px;color:#416884;text-align:left;min-height:56px}
+body.portal-v023 .mine-saved strong{flex:1;font-size:13px}
+body.portal-v023 .mine-saved small{font-size:10px;color:#8aa1b3}
+body.portal-v023 .mine-privacy{font-size:11px;color:#93a3b2;line-height:1.7}
+body.portal-v023 .mine-profile-edit{position:relative;background:#ffffffee;color:#2f5573;border-radius:13px;padding:12px;margin-top:15px}
+body.portal-v023 .mine-profile-edit[hidden]{display:none}
+body.portal-v023 .mine-profile-edit label{display:block;font-size:12px;margin-bottom:9px}
+body.portal-v023 .mine-profile-edit input,body.portal-v023 .mine-profile-edit textarea{width:100%;box-sizing:border-box;display:block;margin-top:4px;border:1px solid #b9d5e8;border-radius:8px;padding:9px;font:inherit;color:#315b7d;background:white}
+body.portal-v023 .mine-edit-actions{display:flex;gap:8px}
+@media(min-width:760px){body.portal-v023 .mine-page{max-width:620px;margin-left:auto;margin-right:auto}}
