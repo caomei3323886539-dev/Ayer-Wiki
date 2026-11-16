@@ -17,7 +17,7 @@ if(communityNav){communityNav.dataset.nav='community';communityNav.setAttribute(
 const syncBeforeCommunity=syncBottomNavigation;
 syncBottomNavigation=function(){syncBeforeCommunity();const isCommunity=activeGroup==='社区';bottom.querySelectorAll('button[data-nav]').forEach(button=>{if(isCommunity){const active=button.dataset.nav==='community';button.classList.toggle('is-active',active);if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')}})};
 const renderBeforeCommunity=render;
-render=function(){if(activeGroup==='社区'){$p('categories').style.display='none';$p('content').innerHTML=communityPage();document.body.classList.add('portal-v023');document.body.classList.remove('portal-home');syncBottomNavigation()}else renderBeforeCommunity()};
+render=function(){if(activeGroup==='社区'){$p('categories').style.display='none';$p('content').innerHTML=communityPage();document.body.classList.add('portal-v023');document.body.classList.remove('portal-home');const header=document.querySelector('body > header');if(header)header.hidden=true;document.body.classList.add('wiki-inner-page');syncBottomNavigation()}else renderBeforeCommunity()};
 const portalOpenBeforeCommunity=portalOpen;
 portalOpen=function(section){if(section==='社区'){communityOpen();return}portalOpenBeforeCommunity(section)};
 render();
