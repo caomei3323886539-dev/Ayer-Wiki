@@ -5,7 +5,7 @@ const avatarImages=["/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABUOEBIQDRUSERIYFhUZHzQiHx0
 const avatarNames=['红樱羽翼少女','苍蓝星翼少女','紫晶镰翼少女'];
 const storageKey='ayerWikiAvatarChoice';
 const avatarFiles=['icons/avatars/avatar_89727_hd.webp','icons/avatars/avatar_82092_hd.webp','icons/avatars/avatar_82080_hd.webp'];
-const avatarSrc=i=>avatarFiles[i]+'?v=039';
+const avatarSrc=i=>avatarFiles[i]+'?v=041';
 const avatarFallback=i=>'data:image/jpeg;base64,'+avatarImages[i];
 function current(){try{const raw=localStorage.getItem(storageKey);if(raw===null)return -1;const v=Number(raw);return Number.isInteger(v)&&v>=0&&v<3?v:-1}catch{return -1}}
 window.ayerAvatarFallback=avatarFallback;
